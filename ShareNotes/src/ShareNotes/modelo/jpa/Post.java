@@ -26,6 +26,9 @@ public class Post implements Serializable {
 	@Column (name="FECHA")
 	private String fecha;
 	
+	@Column (name="DENUNCIA")
+	private String denuncia;
+	
 	@Column (name="TITULO")
 	private String titulo;
 	
@@ -44,6 +47,14 @@ public class Post implements Serializable {
 
 	public final void setIdPost(int idPost) {
 		this.idPost = idPost;
+	}
+
+	public final String getDenuncia() {
+		return denuncia;
+	}
+
+	public final void setDenuncia(String denuncia) {
+		this.denuncia = denuncia;
 	}
 
 	public final int getIdUsuario() {

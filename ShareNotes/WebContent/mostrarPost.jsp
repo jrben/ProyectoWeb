@@ -23,7 +23,8 @@
 	</div>
 	<br>
 	<div style="background-color:#B39CB7">
-			
+		Denunciar Post:	<%=request.getAttribute("denunciarPost") %><br>
+		Denunciar Post: <a href="http://www.unapáginaweb.com" target="_blank">Denunciar Post</a> 
 		Categoría:  <%= request.getAttribute("nombreCategoriaPost") %><br>
 		Creado por: <%= request.getAttribute("nombreUsuarioPost") %><br>
 		<%= request.getAttribute("fechaPost") %><br>		
