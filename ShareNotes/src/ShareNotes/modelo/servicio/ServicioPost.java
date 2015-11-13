@@ -23,7 +23,6 @@ public class ServicioPost {
     	post.setIdCategoria(p.getIdCategoria());
     	post.setTitulo(p.getTitulo());
     	post.setDescripcion(p.getDescripcion());
-    	post.setDenuncia(p.getDenuncia());
     	post.setFecha(p.getFecha());
     	em.persist(post);
 		em.flush();

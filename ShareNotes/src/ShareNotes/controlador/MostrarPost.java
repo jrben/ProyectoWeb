@@ -46,9 +46,6 @@ public class MostrarPost extends HttpServlet {
 		String descripcionPost=post.getDescripcion();
 		request.setAttribute("descripcionPost", descripcionPost);
 		
-		String denunciarPost=post.getDenuncia();
-		request.setAttribute("denunciarPost", denunciarPost);
-		
 		String fechaPost=post.getFecha();
 		request.setAttribute("fechaPost", fechaPost);
 	
