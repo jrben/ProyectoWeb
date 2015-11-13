@@ -14,7 +14,6 @@ public class ServicioDenuncia {
     	Denuncia denuncia = new Denuncia();
     	denuncia.setIdUsuario(d.getIdUsuario());
     	denuncia.setMotivo(d.getMotivo());
-    	denuncia.setIdDenuncia(d.getIdDenuncia());
     	denuncia.setIdPost(d.getIdPost());
     	em.persist(denuncia);
 		em.flush();

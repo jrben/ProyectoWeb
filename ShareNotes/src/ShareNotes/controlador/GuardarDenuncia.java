@@ -34,6 +34,7 @@ public class GuardarDenuncia extends HttpServlet {
 		denuncia.setMotivo(motivoDenuncia);
 		HttpSession session = request.getSession(true);
 		denuncia.setIdUsuario((int)session.getAttribute("idUsuario"));
+
 		
 		ServicioDenuncia servicio = new ServicioDenuncia();
 		servicio.ingresarDenuncia(denuncia);

@@ -5,6 +5,7 @@
 		<class>ShareNotes.modelo.jpa.Usuario</class>
 		<class>ShareNotes.modelo.jpa.Post</class>
 		<class>ShareNotes.modelo.jpa.Categorias</class>
+		<class>ShareNotes.modelo.jpa.Denuncia</class>
 		
 		<properties>
 		<!--Aqui va el puerto q use tu bd y el nombre de la base-->

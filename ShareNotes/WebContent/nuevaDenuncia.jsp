@@ -13,6 +13,7 @@
 	<center>
 		<h3>DENUNCIAR POST</h3>
 		<br><br>
+		<h5>TITULO: <%=request.getAttribute("titulo")%></h5>
 		<h6>Ingrese la Denuncia:</h6>
 		<br><br>
 		<form action="GuardarDenuncia" method="post">
@@ -22,7 +23,7 @@
 			<tr><th>	
 				Motivo:
 			</th><td>	      
-				 <textarea name="motivo" rows="20" cols="60"></textarea>
+				 <textarea name="motivo" rows="20" cols="30"></textarea>
 			</td></tr><tr><th>
 				Usuario:      
 			</th><td>
@@ -32,10 +33,12 @@
 						{
 							%>
 							 <%=session.getAttribute("username")%>
-							Id <%=session.getAttribute("idUsuario")%>							
+							Id <%=session.getAttribute("idUsuario")%>
+				
 							<%
 						}
 					%> 
+
 				</div>     
 			</td></tr>
 		</table>

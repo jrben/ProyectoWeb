@@ -29,6 +29,7 @@ public class MostrarPost extends HttpServlet {
 		ServicioPost servicio = new ServicioPost();
 
 		post=servicio.obtenerPost(Integer.parseInt(request.getParameter("idPost")));
+		request.setAttribute("idPost", request.getParameter("idPost"));
 			
 		int idUsuarioPost=post.getIdUsuario();
 		ServicioUsuario s = new ServicioUsuario();
