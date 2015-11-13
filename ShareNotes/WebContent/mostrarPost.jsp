@@ -22,7 +22,8 @@
 	<%= request.getAttribute("descripcionPost") %><br>	
 	</div>
 	<br>
-	<div style="background-color:#B39CB7">		
+	<div style="background-color:#B39CB7">
+			
 		Categoría:  <%= request.getAttribute("nombreCategoriaPost") %><br>
 		Creado por: <%= request.getAttribute("nombreUsuarioPost") %><br>
 		<%= request.getAttribute("fechaPost") %><br>		
