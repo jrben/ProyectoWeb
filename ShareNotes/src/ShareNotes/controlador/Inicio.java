@@ -47,7 +47,7 @@ public class Inicio extends HttpServlet {
 				session.setAttribute("mod", "si");
 			}
 
-			RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.jsp");
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/Home");
 			rd.forward(request, response);
 		}
 		//si los datos ingresados son incorrectos
