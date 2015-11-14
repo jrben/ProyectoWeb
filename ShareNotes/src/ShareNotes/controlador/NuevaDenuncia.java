@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import ShareNotes.modelo.jpa.Categorias;
 import ShareNotes.modelo.jpa.Post;
@@ -25,6 +26,10 @@ public class NuevaDenuncia extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		HttpSession session=request.getSession(true);	
+
+		
+		
 		ServicioPost servicio = new ServicioPost();
 		Post post = new Post();
 		post=servicio.obtenerPost(Integer.parseInt(request.getParameter("idPost")));
@@ -32,8 +37,14 @@ public class NuevaDenuncia extends HttpServlet {
 		request.setAttribute("id", post.getIdPost());
 	
 
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/nuevaDenuncia.jsp");
-		rd.forward(request, response);
+		if (session.getAttribute("username") != null){
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/nuevaDenuncia.jsp");
+			rd.forward(request, response);	
+		}else
+		{
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/login.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 }

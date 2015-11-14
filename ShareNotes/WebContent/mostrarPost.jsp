@@ -23,7 +23,9 @@
 	</div>
 	<br>
 	<div style="background-color:#B39CB7">
-	<a href="NuevaDenuncia?idPost=<%=request.getAttribute("idPost")%>">														
+	<a href="NuevaDenuncia?idPost=<%=request.getAttribute("idPost")%>">	
+	
+													
 		Denunciar Post:	<%=request.getAttribute("tituloPost")%> </a><br>
 		Categoría:  <%= request.getAttribute("nombreCategoriaPost") %><br>
 		Creado por: <%= request.getAttribute("nombreUsuarioPost") %><br>

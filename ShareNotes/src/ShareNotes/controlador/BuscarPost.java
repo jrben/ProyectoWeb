@@ -52,6 +52,7 @@ public class BuscarPost extends HttpServlet {
 		
 		ServicioCategorias s = new ServicioCategorias();
 		List<Categorias> listaCategorias=s.listarCategorias();
+		
 		HttpSession session=request.getSession(true);	
 		session.setAttribute("listaCategorias", listaCategorias);
 		
