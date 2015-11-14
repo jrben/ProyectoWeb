@@ -25,6 +25,8 @@ public class MostrarPost extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//mostrar a detalle el post 
+		
 		Post post= new Post();
 		ServicioPost servicio = new ServicioPost();
 
