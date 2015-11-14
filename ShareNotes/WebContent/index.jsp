@@ -28,18 +28,23 @@
 	<br>
 	<h6>
 	 <%
-		List<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
+		
+	    List<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
 		for (int i=0;i<posts.size();i++)
 		{	%>
-			<div style="background-color:#CEF6F5"><br>			
+			<br>			
 			<a href="MostrarPost?idPost=<%=posts.get(i).getIdPost()%>">														
 			<%=posts.get(i).getTitulo()%>
 			</a>
-			</div><br>				
+			<br>				
 			
 		<%	}
 	 %>
 	</h6>	
+	
+	
+	
+
 	
 	
 	<jsp:include page="footer.jsp" />

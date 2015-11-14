@@ -67,6 +67,26 @@ public class ServicioPost {
 	}
 	
 	
+public List<Post> listarPostsTitulo(int id){
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("SELECT p FROM Post p WHERE p.titulo="+id);
+		
+		List<Post> posts = new ArrayList<Post>();
+		List<Post> lista = (List<Post>)query.getResultList( );
+		 for(Post p:lista){
+			 Post post = new Post();
+			 post.setTitulo(p.getTitulo());
+			 post.setIdPost(p.getIdPost());
+			 posts.add(post);
+		 }	
+		
+		return posts;		
+	}
+	
+	
+	
 	public Post obtenerPost(int id){
 		Post post = new Post();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
