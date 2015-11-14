@@ -24,6 +24,7 @@ public class NuevaDenuncia extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ServicioPost servicio = new ServicioPost();
 		Post post = new Post();
 		post=servicio.obtenerPost(Integer.parseInt(request.getParameter("idPost")));

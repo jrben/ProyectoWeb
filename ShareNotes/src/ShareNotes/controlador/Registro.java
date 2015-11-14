@@ -28,6 +28,7 @@ public class Registro extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		Usuario usuario = new Usuario();
 		if(request.getParameter("nombreUsuario").equals("")||request.getParameter("username").equals("") || request.getParameter("password1").equals("")){
 			request.setAttribute("error","ERROR<br>Debe llenar todos los campos");

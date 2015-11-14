@@ -31,13 +31,18 @@ public class GuardarPost extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Post post = new Post();
+		
 		post.setTitulo(request.getParameter("titulo"));
+		
 		String contenidoPost=request.getParameter("descripcion");
 		contenidoPost = contenidoPost.replace("\r\n", "<br>");
 		post.setDescripcion(contenidoPost);
+		
 		post.setFecha(new Date().toString());
+		
 		HttpSession session = request.getSession(true);
 		post.setIdUsuario((int)session.getAttribute("idUsuario"));
+		
 		post.setIdCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
 		
 		ServicioPost servicio = new ServicioPost();

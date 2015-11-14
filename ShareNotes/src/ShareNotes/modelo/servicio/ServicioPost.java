@@ -71,11 +71,15 @@ public class ServicioPost {
 		Post post = new Post();
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
 		EntityManager em = emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Post p WHERE p.idPost = '"+id+"'");
+		Query query = em.createQuery("SELECT p FROM Post p WHERE p.idPost = " +id);
 		
 		post = (Post) query.getSingleResult();
 
 		return post;
 	}
+	
+	
+	
+	
 
 }

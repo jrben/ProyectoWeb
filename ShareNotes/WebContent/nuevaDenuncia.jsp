@@ -14,6 +14,9 @@
 		<h3>DENUNCIAR POST</h3>
 		<br><br>
 		<h5>TITULO: <%=request.getAttribute("titulo")%></h5>
+		<p></p>
+		<h5>Id: <%=request.getAttribute("id")%></h5>
+		<p></p>
 		<h6>Ingrese la Denuncia:</h6>
 		<br><br>
 		<form action="GuardarDenuncia" method="post">

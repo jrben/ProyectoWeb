@@ -23,6 +23,7 @@ public class NuevoPost extends HttpServlet {
     }
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		ServicioCategorias servicio = new ServicioCategorias();
 		List<Categorias> listaCategorias=servicio.listarCategorias();
 		request.setAttribute("categorias", listaCategorias);
