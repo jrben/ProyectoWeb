@@ -71,7 +71,7 @@ public List<Post> listarPostsTitulo(String titulo){
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
 		EntityManager em = emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Post p WHERE p.titulo= '"+titulo+"' ");
+		Query query = em.createQuery("SELECT p FROM Post p WHERE p.titulo= '"+titulo+"'");
 		
 		List<Post> posts = new ArrayList<Post>();
 		List<Post> lista = (List<Post>)query.getResultList( );

@@ -50,7 +50,7 @@ public class BuscarPost extends HttpServlet {
 		
 		System.out.println("jaito pato"+request.getParameter("comboCategoria"));
 		
-		String titulo= request.getParameter("titulo");
+		//String titulo= request.getParameter("titulo");
 		
 		if(((request.getParameter("titulo").equals(""))&&((request.getParameter("comboCategoria")).equals(""))))
 		{
@@ -65,24 +65,36 @@ public class BuscarPost extends HttpServlet {
 		else
 		{
 		    //por titulo
-		    if(titulo != " ")
+		    if((request.getParameter("titulo").equals("")))
 		        {
-		    	System.out.println("jaito pato 2 mmmmmmmm"+titulo);
-		    	ServicioPost servicioTi = new ServicioPost();
-		            List<Post> listaPostsTi=servicioTi.listarPostsTitulo("'titulo'");
-		            request.setAttribute("posts", listaPostsTi);
-		            System.out.println("listar prueba 2 titulo"+titulo+listaPostsTi);
+		    
+		    	System.out.println("jaito pato 2 caaaat"+request.getParameter("comboCategoria")); 
+	             ServicioPost servicioCa = new ServicioPost();
+	             List<Post> listaPostsCa=servicioCa.listarPostsCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
+	              request.setAttribute("posts", listaPostsCa);
+	              
+		    	
+		    	
 		            
 		        }
+		    else
+		    {
+		    	System.out.println("jaito pato 2 mmmmmmmm"+request.getParameter("titulo"));
+		    	ServicioPost servicioTi = new ServicioPost();
+		            List<Post> listaPostsTi=servicioTi.listarPostsTitulo(request.getParameter("titulo"));
+		            request.setAttribute("posts", listaPostsTi);
+		            System.out.println("listar prueba 2 titulo"+listaPostsTi);
+		    	
+		    }
 		
 		//por categoria
-		   if(((request.getParameter("comboCategoria")))!=null)
+	/*	   if(((request.getParameter("comboCategoria")))!=null)
 		    {
 			   System.out.println("jaito pato 2 caaaat"+request.getParameter("comboCategoria")); 
 		             ServicioPost servicioCa = new ServicioPost();
 		             List<Post> listaPostsCa=servicioCa.listarPostsCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
 		              request.setAttribute("posts", listaPostsCa);
-		     }
+		     }*/
 		
 		}
 		
