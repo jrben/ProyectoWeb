@@ -5,6 +5,8 @@ import java.io.IOException;
 
 
 
+
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,16 +48,45 @@ public class BuscarPost extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		ServicioPost servicio = new ServicioPost();
-		List<Post> listaPosts=servicio.listarPosts();
-		request.setAttribute("posts", listaPosts);
+		System.out.println("jaito pato"+request.getParameter("comboCategoria"));
 		
-		ServicioCategorias s = new ServicioCategorias();
-		List<Categorias> listaCategorias=s.listarCategorias();
+		String titulo= request.getParameter("titulo");
 		
-		HttpSession session=request.getSession(true);	
-		session.setAttribute("listaCategorias", listaCategorias);
+		if(((request.getParameter("titulo").equals(""))&&((request.getParameter("comboCategoria")).equals(""))))
+		{
+		     // todos
+		     ServicioPost servicio = new ServicioPost();
+		     List<Post> listaPosts=servicio.listarPosts();		
+		     request.setAttribute("posts", listaPosts);
 		
+		     
+		}
+		
+		else
+		{
+		    //por titulo
+		    if(titulo != " ")
+		        {
+		    	System.out.println("jaito pato 2 mmmmmmmm"+titulo);
+		    	ServicioPost servicioTi = new ServicioPost();
+		            List<Post> listaPostsTi=servicioTi.listarPostsTitulo("'titulo'");
+		            request.setAttribute("posts", listaPostsTi);
+		            System.out.println("listar prueba 2 titulo"+titulo+listaPostsTi);
+		            
+		        }
+		
+		//por categoria
+		   if(((request.getParameter("comboCategoria")))!=null)
+		    {
+			   System.out.println("jaito pato 2 caaaat"+request.getParameter("comboCategoria")); 
+		             ServicioPost servicioCa = new ServicioPost();
+		             List<Post> listaPostsCa=servicioCa.listarPostsCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
+		              request.setAttribute("posts", listaPostsCa);
+		     }
+		
+		}
+		
+		//System.out.println("hola"+ request.getParameter("titulo")+listaCategorias);	
 		
 		RequestDispatcher rd3 = getServletContext().getRequestDispatcher("/buscarPostTodos.jsp");
 		rd3.forward(request, response);

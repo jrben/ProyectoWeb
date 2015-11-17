@@ -67,11 +67,11 @@ public class ServicioPost {
 	}
 	
 	
-public List<Post> listarPostsTitulo(int id){
+public List<Post> listarPostsTitulo(String titulo){
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
 		EntityManager em = emf.createEntityManager();
-		Query query = em.createQuery("SELECT p FROM Post p WHERE p.titulo="+id);
+		Query query = em.createQuery("SELECT p FROM Post p WHERE p.titulo= '"+titulo+"' ");
 		
 		List<Post> posts = new ArrayList<Post>();
 		List<Post> lista = (List<Post>)query.getResultList( );
@@ -80,8 +80,11 @@ public List<Post> listarPostsTitulo(int id){
 			 post.setTitulo(p.getTitulo());
 			 post.setIdPost(p.getIdPost());
 			 posts.add(post);
+			 
+			 
 		 }	
 		
+		 System.out.println("HOLA AMGO ROGER" +titulo+posts);
 		return posts;		
 	}
 	

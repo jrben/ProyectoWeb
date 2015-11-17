@@ -29,6 +29,7 @@ public class PostXcategoria extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ServicioPost servicio = new ServicioPost();
 		List<Post> listaPosts=servicio.listarPostsCategoria(Integer.parseInt(request.getParameter("idCategoria")));
 		request.setAttribute("posts", listaPosts);
