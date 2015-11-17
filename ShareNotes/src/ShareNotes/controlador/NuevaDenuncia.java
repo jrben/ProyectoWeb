@@ -34,7 +34,7 @@ public class NuevaDenuncia extends HttpServlet {
 		Post post = new Post();
 		post=servicio.obtenerPost(Integer.parseInt(request.getParameter("idPost")));
 		request.setAttribute("titulo", post.getTitulo());
-		request.setAttribute("id", post.getIdPost());
+		request.setAttribute("idPost", post.getIdPost());
 	
 
 		if (session.getAttribute("username") != null){

@@ -1,4 +1,4 @@
- <link href="../CSS/estilos.css" media="all" rel="stylesheet" type="text/css" />
+<link href="../CSS/estilos.css" media="all" rel="stylesheet" type="text/css" />
  
 <div> 
 <footer>

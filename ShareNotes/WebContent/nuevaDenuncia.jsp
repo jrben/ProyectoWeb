@@ -13,22 +13,25 @@
 	<center>
 		<h3>DENUNCIAR POST</h3>
 		<br><br>
-		<h5>TITULO: <%=request.getAttribute("titulo")%></h5>
+		<h5>POST A DENUNCIAR: <%=request.getAttribute("titulo")%></h5>
 		<p></p>
-		<h5>Id: <%=request.getAttribute("id")%></h5>
+		<%--String var=(String)request.getAttribute("idPost");
+		request.setAttribute("idd", var);--%>
+		
 		<p></p>
 		<h6>Ingrese la Denuncia:</h6>
 		<br><br>
 		<form action="GuardarDenuncia" method="post">
 		
+		<input type="hidden" name="idd" value=<%=request.getAttribute("idPost") %>></input>
 		<table>
 				
 			<tr><th>	
 				Motivo:
 			</th><td>	      
-				 <textarea name="motivo" rows="20" cols="30"></textarea>
+				 <textarea name="motivo" rows="20" cols="40"></textarea>
 			</td></tr><tr><th>
-				Usuario:      
+				Denunciante:      
 			</th><td>
 				 <div>
 					<%
@@ -36,8 +39,7 @@
 						{
 							%>
 							 <%=session.getAttribute("username")%>
-							Id <%=session.getAttribute("idUsuario")%>
-				
+											
 							<%
 						}
 					%> 
