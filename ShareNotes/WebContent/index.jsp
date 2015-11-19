@@ -32,11 +32,11 @@
 	    List<Post> posts = (ArrayList<Post>) request.getAttribute("posts");
 		for (int i=0;i<posts.size();i++)
 		{	%>
-			<br>			
+			<div style="background-color:#F0F8FF"><br>						
 			<a href="MostrarPost?idPost=<%=posts.get(i).getIdPost()%>">														
 			<%=posts.get(i).getTitulo()%>
 			</a>
-			<br>				
+			</div><br>				
 			
 		<%	}
 	 %>

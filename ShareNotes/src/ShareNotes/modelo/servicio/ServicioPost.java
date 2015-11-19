@@ -29,6 +29,30 @@ public class ServicioPost {
 		em.getTransaction().commit();    	
 	}
 	
+	public void actualizarPost(Post p){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+    	EntityManager em = emf.createEntityManager();
+    	
+		Post post = em.find(Post.class, p.getIdPost());		 
+		em.getTransaction().begin();
+		post.setTitulo(p.getTitulo());
+		post.setDescripcion(p.getDescripcion());
+		post.setFecha(p.getFecha());
+		post.setIdCategoria(p.getIdCategoria());
+		em.getTransaction().commit();
+	}
+	
+	public void eliminarPost(int idPost){
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+    	EntityManager em = emf.createEntityManager();
+    	
+		Post post = em.find(Post.class, idPost);				 
+		em.getTransaction().begin();
+		em.remove(post);
+		em.getTransaction().commit();
+	}
+	
 	public List<Post> listarPosts(){
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
