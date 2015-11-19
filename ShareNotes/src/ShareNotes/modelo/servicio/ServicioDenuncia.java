@@ -46,6 +46,17 @@ public class ServicioDenuncia {
 		
 	}
 	
+	public Denuncia obtenerDenuncia(int id){
+		Denuncia denuncia = new Denuncia();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("SELECT d FROM Denuncia d WHERE d.idDenuncia = " +id);
+		
+		denuncia = (Denuncia) query.getSingleResult();
+
+		return denuncia;
+	}
+	
 	
 
 }
