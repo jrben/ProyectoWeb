@@ -27,6 +27,9 @@ public class MostrarDenuncia extends HttpServlet {
 
 		denuncia=servicio.obtenerDenuncia(Integer.parseInt(request.getParameter("idDenuncia")));
 		request.setAttribute("idDenuncia", request.getParameter("idDenuncia"));
+		
+		String motivo=denuncia.getMotivo();
+		request.setAttribute("motivo", motivo);
 
 	}
 
