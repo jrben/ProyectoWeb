@@ -24,18 +24,11 @@ public class MostrarDenuncia extends HttpServlet {
 
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Denuncia denuncia= new Denuncia();
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ServicioDenuncia servicio = new ServicioDenuncia();
 		List<Denuncia> listaDenuncias=servicio.listarDenuncias();
 		request.setAttribute("denuncias", listaDenuncias);
-		
 
-		denuncia=servicio.obtenerDenuncia(Integer.parseInt(request.getParameter("idDenuncia")));
-		request.setAttribute("idDenuncia", request.getParameter("idDenuncia"));
-		
-		String motivo=denuncia.getMotivo();
-		request.setAttribute("motivo", motivo);
 		
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/mostrarDenuncia.jsp");
 		rd.forward(request, response);

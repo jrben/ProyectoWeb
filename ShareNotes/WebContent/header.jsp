@@ -35,7 +35,7 @@
   </li>
   <li><a  href="buscarPost.jsp"><i class="icon-user"></i>Buscar Post</a></li>
   <%if(session.getAttribute("mod")!=null){%>
-  	<li><a href="mostrarDenuncia.jsp">Ver denuncias</a></li>
+  	<li><a href="MostrarDenuncia">Ver denuncias</a></li>
   	<li><a href="#">Administrar usuarios</a></li>  
   <% } %> 
   <li><a  href="#">Cuenta</a>

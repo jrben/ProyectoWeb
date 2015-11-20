@@ -27,14 +27,15 @@
 		{	%>
 			<div style="background-color:#F0F8FF"><br>						
 			<a href="MostrarDenuncia?idDenuncia=<%=denuncias.get(i).getIdDenuncia()%>">														
-			<%=denuncias.get(i).getIdDenuncia()%>
+			Denuncia Nro <%=i%><%=denuncias.get(i).getIdDenuncia()%>
+			
 			</a>
 			</div><br>				
 			
 		<%	}
 	 %>
 
-	
+	</div>
 	<br>
 	<jsp:include page="footer.jsp" />
 </body>
