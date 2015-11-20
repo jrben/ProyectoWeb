@@ -20,7 +20,7 @@
 	
 	<div style="background-color:#ffffff">
 	<br>			
-	<%= request.getAttribute("motivo") %><br>	
+	<%= request.getAttribute("idDenuncia") %><br>	
 	</div>
 	<br>
 	<div style="background-color:#B39CB7">

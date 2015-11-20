@@ -48,8 +48,7 @@
     	%>    	
 	   		<li><a href="registro.jsp">Registrarse</a></li>
 	   		<li><a href="login.jsp">Iniciar Sesion</a></li>
-	   	<% } %> 
-	   	  		   
+	   	<% } %>   	  		   
   	</ul>
   </li>
 </ul>
