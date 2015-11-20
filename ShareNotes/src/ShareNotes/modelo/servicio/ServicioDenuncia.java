@@ -46,6 +46,34 @@ public class ServicioDenuncia {
 		
 	}
 	
+	public Denuncia obtenerDenuncia(int id){
+		Denuncia denuncia = new Denuncia();
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("SELECT d FROM Denuncia d");
+		
+		denuncia = (Denuncia) query.getSingleResult();
+
+		return denuncia;
+	}
+	
+	public List<Denuncia> listarDenuncias(){
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("SELECT d FROM Denuncia d");
+		
+		List<Denuncia> denuncias = new ArrayList<Denuncia>();
+		List<Denuncia> lista = (List<Denuncia>)query.getResultList( );
+		 for(Denuncia d:lista){	 
+			 Denuncia denuncia = new Denuncia();
+			 denuncia.setIdDenuncia(d.getIdDenuncia());
+			 denuncia.setIdPost(d.getIdUsuario());
+			 denuncias.add(denuncia);
+		 }	
+		
+		return denuncias;		
+	}
 	
 
 }
