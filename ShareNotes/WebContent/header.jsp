@@ -36,7 +36,12 @@
   <li><a  href="buscarPost.jsp"><i class="icon-user"></i>Buscar Post</a></li>
   <%if(session.getAttribute("mod")!=null){%>
   	<li><a href="MostrarDenuncia">Ver denuncias</a></li>
-  	<li><a href="#">Administrar usuarios</a></li>  
+  	<li><a href="#">Administrar usuarios</a> 
+  	 <ul>
+  	<li><a href="Moderador.jsp">Moderador</a></li>
+	<li><a href="NuevaCategoria.jsp">Categoria</a></li>
+  	</ul>
+  	</li>
   <% } %> 
   <li><a  href="#">Cuenta</a>
     <ul class="sub-menu">

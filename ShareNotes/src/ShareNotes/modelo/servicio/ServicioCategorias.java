@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import ShareNotes.modelo.jpa.Categorias;
+import ShareNotes.modelo.jpa.Post;
 
 
 public class ServicioCategorias {
@@ -38,5 +39,20 @@ public class ServicioCategorias {
     	Categorias c = (Categorias) query.getSingleResult();
     	String nombre=c.getNombreCategoria();
 		return nombre;
+	}
+	
+	
+	
+	public void ingresarCategoria(Categorias c){
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+    	EntityManager em = emf.createEntityManager();
+    	
+    	em.getTransaction().begin();
+    	Categorias categoria= new Categorias();
+    	categoria.setNombreCategoria(c.getNombreCategoria());
+    	
+    	em.persist(categoria);
+		em.flush();
+		em.getTransaction().commit();    	
 	}
 }

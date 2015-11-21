@@ -33,24 +33,20 @@ public class GuardarDenuncia extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		Denuncia denuncia = new Denuncia();
-		System.out.println("11111");
 		//id usuario
 		HttpSession session = request.getSession(true);
 		denuncia.setIdUsuario((int)session.getAttribute("idUsuario"));
-		System.out.println("222222");
 		denuncia.setIdPost(Integer.parseInt(( request.getParameter("idd"))));
-		System.out.println("444444");
 		//motivo
 		String motivoDenuncia=(String) request.getParameter("motivo");
 		motivoDenuncia = motivoDenuncia.replace("\r\n", "<br>");
 		denuncia.setMotivo(motivoDenuncia);
-		System.out.println("3333333");
-		System.out.println("holaa"+denuncia.getMotivo()+denuncia.getIdPost()+denuncia.getIdUsuario());
+		
 		ServicioDenuncia servicio = new ServicioDenuncia();
 		
 		servicio.ingresarDenuncia(denuncia);
 		
-		System.out.println("holaa"+denuncia.getMotivo()+denuncia.getIdPost()+denuncia.getIdUsuario());
+		
 		
 		request.setAttribute("mensaje", "Denuncia ingresada correctamente, se procedera a verificarla!");
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/mensaje.jsp");
