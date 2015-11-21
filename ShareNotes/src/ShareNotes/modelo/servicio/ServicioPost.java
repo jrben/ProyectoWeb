@@ -108,7 +108,7 @@ public List<Post> listarPostsTitulo(String titulo){
 			 
 		 }	
 		
-		 System.out.println("HOLA AMGO ROGER" +titulo+posts);
+
 		return posts;		
 	}
 	

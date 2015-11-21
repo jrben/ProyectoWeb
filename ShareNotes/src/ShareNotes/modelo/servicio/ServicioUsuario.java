@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import ShareNotes.modelo.jpa.Categorias;
 import ShareNotes.modelo.jpa.Post;
 import ShareNotes.modelo.jpa.Usuario;
 
@@ -95,6 +96,31 @@ public class ServicioUsuario {
     	String nombre=u.getNombreUsuario();
 		return nombre;
 	}
+	
+	
+public List<Usuario> listarUsuarios() {
+		
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory( "ShareNotes" );
+		EntityManager em = emf.createEntityManager();
+		Query query = em.createQuery("SELECT u FROM Usuario u");
+		
+		  System.out.println("consulta" + query);
+		List<Usuario> usuarios = new ArrayList<Usuario>();
+		List<Usuario> lista=(List<Usuario>)query.getResultList( );
+	    for( Usuario u:lista )
+	    {   
+	    	Usuario usr = new Usuario();
+	    	usr.setIdUsuario(u.getIdUsuario());
+	    	usr.setNombreUsuario(u.getNombreUsuario());
+	    //	usr.setModerador(u.isModerador());	    	
+	    	usuarios.add(usr);
+	    	
+	    	
+	    }
+	    System.out.println("consulta" + usuarios);
+	    return usuarios;		
+	}
+	
 	
 	
 }

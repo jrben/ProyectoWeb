@@ -13,30 +13,14 @@
 	
 	<br>
 	<div style="background-color:#eeeeff">
-		<br>
-		<h3>DENUNCIAS</h3>
-		<br>
+		
 	</div>
 	<br>
 	
 	<div style="background-color:#ffffff">
-	 <%
-		
-	    List<Denuncia> denuncias = (ArrayList<Denuncia>) request.getAttribute("denuncias");
-		for (int i=0;i<denuncias.size();i++)
-		{	%>
-			<div style="background-color:#F0F8FF"><br>						
-			<a href="Denuncia?idDenuncia=<%=denuncias.get(i).getIdDenuncia()%>">														
-			Denuncia Nro <%=i%><%=denuncias.get(i).getIdDenuncia()%>
-			
-			</a>
-			</div><br>				
-			
-		<%	}
-	 %>
-
+	<br>			
+	<%= request.getAttribute("motivo") %><br>	
 	</div>
-	<br>
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

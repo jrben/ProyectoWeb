@@ -38,8 +38,7 @@
   	<li><a href="MostrarDenuncia">Ver denuncias</a></li>
   	<li><a href="#">Administrar usuarios</a> 
   	 <ul>
-  	<li><a href="Moderador.jsp">Moderador</a></li>
-	<li><a href="NuevaCategoria.jsp">Categoria</a></li>
+  		<li><a href="NuevaCategoria.jsp">Categoria</a></li>
   	</ul>
   	</li>
   <% } %> 

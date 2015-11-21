@@ -48,7 +48,7 @@ public class BuscarPost extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("jaito pato"+request.getParameter("comboCategoria"));
+		
 		
 		//String titulo= request.getParameter("titulo");
 		
@@ -68,7 +68,7 @@ public class BuscarPost extends HttpServlet {
 		    if((request.getParameter("titulo").equals("")))
 		        {
 		    
-		    	System.out.println("jaito pato 2 caaaat"+request.getParameter("comboCategoria")); 
+		    	 
 	             ServicioPost servicioCa = new ServicioPost();
 	             List<Post> listaPostsCa=servicioCa.listarPostsCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
 	              request.setAttribute("posts", listaPostsCa);
@@ -79,26 +79,19 @@ public class BuscarPost extends HttpServlet {
 		        }
 		    else
 		    {
-		    	System.out.println("jaito pato 2 mmmmmmmm"+request.getParameter("titulo"));
+		    	
 		    	ServicioPost servicioTi = new ServicioPost();
 		            List<Post> listaPostsTi=servicioTi.listarPostsTitulo(request.getParameter("titulo"));
 		            request.setAttribute("posts", listaPostsTi);
-		            System.out.println("listar prueba 2 titulo"+listaPostsTi);
+		            
 		    	
 		    }
 		
-		//por categoria
-	/*	   if(((request.getParameter("comboCategoria")))!=null)
-		    {
-			   System.out.println("jaito pato 2 caaaat"+request.getParameter("comboCategoria")); 
-		             ServicioPost servicioCa = new ServicioPost();
-		             List<Post> listaPostsCa=servicioCa.listarPostsCategoria(Integer.parseInt(request.getParameter("comboCategoria")));
-		              request.setAttribute("posts", listaPostsCa);
-		     }*/
+		
 		
 		}
 		
-		//System.out.println("hola"+ request.getParameter("titulo")+listaCategorias);	
+			
 		
 		RequestDispatcher rd3 = getServletContext().getRequestDispatcher("/buscarPostTodos.jsp");
 		rd3.forward(request, response);
